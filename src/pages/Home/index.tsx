@@ -1,18 +1,18 @@
-import Maintemplate from '../../templates/MainTemplate';
 import { Container } from '../../components/Container';
 import { CountDown } from '../../components/CountDown';
 import { MainForm } from '../../components/MainForm';
+import MainTemplate from '../../templates/MainTemplate';
 
 function Home() {
   return (
-    <Maintemplate>
+    <MainTemplate>
       <Container>
         <CountDown />
       </Container>
       <Container>
         <MainForm />
       </Container>
-    </Maintemplate>
+    </MainTemplate>
   );
 }
 
