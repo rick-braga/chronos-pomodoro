@@ -1,9 +1,18 @@
 import { Container } from '../../components/Container';
 import { CountDown } from '../../components/CountDown';
 import { MainForm } from '../../components/MainForm';
+import { TaskStateModel } from '../../models/TaskStateModel';
 import MainTemplate from '../../templates/MainTemplate';
 
-function Home() {
+type HomeProps = {
+  state: TaskStateModel;
+  setState: React.Dispatch<React.SetStateAction<TaskStateModel>>;
+};
+
+function Home(props: HomeProps) {
+  // Home só está recebendo as props porque precisamos enviar pra CountDown e MainForm
+  const { state, setState } = props;
+
   return (
     <MainTemplate>
       <Container>
