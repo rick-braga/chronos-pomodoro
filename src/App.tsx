@@ -1,6 +1,7 @@
 import Home from './pages/Home';
 import { TaskStateModel } from './models/TaskStateModel';
 import { useState } from 'react';
+import { TaskContextProvider } from './contexts/TaskContext';
 
 import './styles/theme.css';
 import './styles/global.css';
@@ -19,10 +20,13 @@ const initialState: TaskStateModel = {
 };
 
 function App() {
-  //criamos o state aqui pq vamos jogar em componentes filhos do App
   const [state, setState] = useState(initialState);
 
-  return <Home state={state} setState={setState} />;
+  return (
+    <TaskContextProvider>
+      <Home />
+    </TaskContextProvider>
+  );
 }
 
 export default App;
